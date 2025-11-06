@@ -1,0 +1,11 @@
+langchain>=0.2.0
+openai>=1.40.0
+tiktoken>=0.7.0
+boto3>=1.34.0
+javalang==0.13.0
+lizard>=1.17.10
+pydantic>=2.7.0
+pyyaml>=6.0.1
+tenacity>=8.2.2
+tqdm>=4.66.0
+requests>=2.32.0
