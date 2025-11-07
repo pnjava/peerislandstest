@@ -1,0 +1,2400 @@
+{
+  "repo": "/home/cloudshell-user/SakilaProject",
+  "generated_at": "2025-11-07T17:27:14.596172Z",
+  "tech_stack": {
+    "build": "maven",
+    "dependencies": [
+      "spring-boot-starter-actuator",
+      "spring-boot-starter-tomcat",
+      "spring-boot-starter-thymeleaf",
+      "spring-boot-starter-web",
+      "spring-boot-devtools",
+      "mysql-connector-java",
+      "spring-boot-starter-data-jpa",
+      "spring-boot-starter-test",
+      "bootstrap",
+      "font-awesome",
+      "thymeleaf-layout-dialect",
+      "spring-boot-starter-security",
+      "spring-security-test",
+      "thymeleaf-extras-springsecurity3",
+      "junit",
+      "mockito-junit-jupiter"
+    ],
+    "frameworks_detected": [
+      "spring-boot-starter-actuator",
+      "spring-boot-starter-tomcat",
+      "spring-boot-starter-thymeleaf",
+      "spring-boot-starter-web",
+      "spring-boot-devtools",
+      "mysql-connector-java",
+      "spring-boot-starter-data-jpa",
+      "spring-boot-starter-test",
+      "thymeleaf-layout-dialect",
+      "spring-boot-starter-security",
+      "thymeleaf-extras-springsecurity3"
+    ]
+  },
+  "high_level_overview": "Overview unavailable due to LLM error.",
+  "noteworthy_aspects": [],
+  "cross_cutting_concerns": [],
+  "possible_gaps": [],
+  "packages": {
+    "default": [
+      {
+        "class": "MavenWrapperDownloader",
+        "methods": [
+          {
+            "signature": "void main(String[] args)",
+            "loc": 48,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void downloadFileFromURL(String urlString, File destination)",
+            "loc": 19,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      }
+    ],
+    "com.sparta.engineering72.sakilaproject": [
+      {
+        "class": "MockTests",
+        "methods": [
+          {
+            "signature": "void init()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testActorById()",
+            "loc": 8,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testActorByFirstName()",
+            "loc": 8,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testActorByLastName()",
+            "loc": 8,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testActorByMore()",
+            "loc": 10,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testActorByFullName()",
+            "loc": 11,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testFilmByID()",
+            "loc": 10,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testFilmByDescritption()",
+            "loc": 8,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testFilmByRating()",
+            "loc": 8,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testFilmByLength()",
+            "loc": 8,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testFilmByName()",
+            "loc": 8,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testFilmByDescription()",
+            "loc": 8,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testFilms()",
+            "loc": 19,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testCategoryById()",
+            "loc": 7,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testCategoryByName()",
+            "loc": 8,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testCustomerById()",
+            "loc": 7,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testCustomer()",
+            "loc": 17,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testStaff()",
+            "loc": 22,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testFilmController()",
+            "loc": 6,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testFilmController2()",
+            "loc": 6,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testCategory()",
+            "loc": 6,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testCategory2()",
+            "loc": 6,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testActorController1()",
+            "loc": 6,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testCustomerController()",
+            "loc": 7,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testCustomerController2()",
+            "loc": 6,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testInventory()",
+            "loc": 18,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testRental()",
+            "loc": 29,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void testCategoryByTimeStamp()",
+            "loc": 9,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "SakilaProjectApplicationTests",
+        "methods": [
+          {
+            "signature": "void MainController1()",
+            "loc": 5,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void MainController2()",
+            "loc": 5,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void MainController3()",
+            "loc": 5,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "SakilaProjectApplication",
+        "methods": [
+          {
+            "signature": "void main(String[] args)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      }
+    ],
+    "com.sparta.engineering72.sakilaproject.securingweb": [
+      {
+        "class": "UserDetailsServiceImpl",
+        "methods": [
+          {
+            "signature": "UserDetails loadUserByUsername(String anyUsername)",
+            "loc": 20,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "MvcConfig",
+        "methods": [
+          {
+            "signature": "void addViewControllers(ViewControllerRegistry registry)",
+            "loc": 5,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "FailureHandler",
+        "methods": [
+          {
+            "signature": "void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException e)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "SuccessHandler",
+        "methods": [
+          {
+            "signature": "void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)",
+            "loc": 22,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "WebSecurityConfig",
+        "methods": [
+          {
+            "signature": "void configure(HttpSecurity http)",
+            "loc": 26,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "UserDetailsService userDetailsService()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "PasswordEncoder passwordEncoder()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "DaoAuthenticationProvider authenticationProvider()",
+            "loc": 6,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void configure(AuthenticationManagerBuilder auth)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      }
+    ],
+    "com.sparta.engineering72.sakilaproject.services": [
+      {
+        "class": "ActorService",
+        "methods": [
+          {
+            "signature": "List getAllActors()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Actor getActorByID(int id)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "List getActorsByFullName(String firstName, String lastName)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "List getActorsByFirstName(String firstName)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "List getActorsByLastName(String lastName)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getActorFullNameFromID(Integer id)",
+            "loc": 4,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "FilmService",
+        "methods": [
+          {
+            "signature": "List getAllFilms()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Film getFilmByID(int id)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "List getFilmsByTitle(String title)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "List getAvailableFilms()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Integer getAvailableFilmCount(Integer id)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "List getFilmsByCategory(Integer id)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "List getFilmsByActor(Integer id)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void save(Film film)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void deleteFilmById(int id)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "InventoryService",
+        "methods": [
+          {
+            "signature": "List getAllInventory()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Inventory getInventoriesById(Integer id)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void deleteInventoryItemById(Integer id)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Integer getInventoryCount()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "StaffService",
+        "methods": [
+          {
+            "signature": "List getAllStaff()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Staff getStaffByUsername(String username)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "CustomerService",
+        "methods": [
+          {
+            "signature": "List getAllCustomers()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "List getCustomersByFirstName(String firstName)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "List getCustomersByLastName(String lastName)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "List getCustomersByFullName(String firstName, String lastName)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Customer getCustomerByID(int id)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Customer getCustomerByEmail(String email)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void save(Customer customer)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Integer getCustomerCount()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "CategoryService",
+        "methods": [
+          {
+            "signature": "List getAllCategories()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Category getByCategoryId(Integer id)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "RentalService",
+        "methods": [
+          {
+            "signature": "List getRentalsByCustomer(Integer id)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void addRental(int inventoryId, int customerId, Timestamp returnDate)",
+            "loc": 11,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      }
+    ],
+    "com.sparta.engineering72.sakilaproject.controller": [
+      {
+        "class": "CustomerController",
+        "methods": [
+          {
+            "signature": "String currentUser(ModelMap modelMap, HttpServletRequest request)",
+            "loc": 18,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getCustomers(ModelMap modelMap, String firstNameFilter, String lastNameFilter)",
+            "loc": 16,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String showUsersRentalHistory(ModelMap modelMap, int id)",
+            "loc": 17,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "CategoryController",
+        "methods": [
+          {
+            "signature": "String getCategories(ModelMap modelMap)",
+            "loc": 4,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getCategoryDetails(ModelMap modelMap, Integer id)",
+            "loc": 4,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Category getCategoryById(Integer id)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "FilmController",
+        "methods": [
+          {
+            "signature": "String getFilms(ModelMap modelMap, String filter)",
+            "loc": 14,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getFilmDetails(ModelMap modelMap, Integer id)",
+            "loc": 7,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String rentFilm(ModelMap modelMap, Principal principal, int filmid)",
+            "loc": 15,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getFilmDetails(ModelMap modelMap, String filter)",
+            "loc": 22,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "ModelAndView showEditProductPage(int id)",
+            "loc": 7,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String deleteProduct(int id)",
+            "loc": 4,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Film findFilmByID(Integer id)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "StaffController",
+        "methods": [
+          {
+            "signature": "String currentUser(ModelMap modelMap, HttpServletRequest request)",
+            "loc": 10,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "MainController",
+        "methods": [
+          {
+            "signature": "String home()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String login()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String account()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "ActorController",
+        "methods": [
+          {
+            "signature": "String getActors(ModelMap modelMap, String firstNameFilter, String lastNameFilter)",
+            "loc": 15,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getActorFilmDetails(ModelMap modelMap, Integer id)",
+            "loc": 5,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Actor findActorById(Integer id)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getActorFullNameFromID(Integer id)",
+            "loc": 4,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      }
+    ],
+    "com.sparta.engineering72.sakilaproject.entities": [
+      {
+        "class": "FilmText",
+        "methods": [
+          {
+            "signature": "int getFilmId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setFilmId(int filmId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getTitle()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setTitle(String title)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getDescription()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setDescription(String description)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "boolean equals(Object o)",
+            "loc": 8,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int hashCode()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "Category",
+        "methods": [
+          {
+            "signature": "int getCategoryId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setCategoryId(int categoryId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getName()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setName(String name)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Timestamp getLastUpdate()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setLastUpdate(Timestamp lastUpdate)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "boolean equals(Object o)",
+            "loc": 8,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int hashCode()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "FilmActorPK",
+        "methods": [
+          {
+            "signature": "Integer getActorId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setActorId(int actorId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int getFilmId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setFilmId(int filmId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "boolean equals(Object o)",
+            "loc": 7,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int hashCode()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "FilmCategoryPK",
+        "methods": [
+          {
+            "signature": "int getFilmId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setFilmId(int filmId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int getCategoryId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setCategoryId(int categoryId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "boolean equals(Object o)",
+            "loc": 7,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int hashCode()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "Order",
+        "methods": [
+          {
+            "signature": "Customer getCustomer()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setCustomer(Customer customer)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Film getFilm()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setFilm(Film film)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Rental getRental()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setRental(Rental rental)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "Customer",
+        "methods": [
+          {
+            "signature": "int getCustomerId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setCustomerId(int customerId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getFirstName()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setFirstName(String firstName)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getLastName()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setLastName(String lastName)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getEmail()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setEmail(String email)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "byte getActive()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setActive(byte active)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Timestamp getCreateDate()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setCreateDate(Timestamp createDate)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Timestamp getLastUpdate()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setLastUpdate(Timestamp lastUpdate)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "boolean equals(Object o)",
+            "loc": 12,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int hashCode()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "FilmActor",
+        "methods": [
+          {
+            "signature": "int getActorId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setActorId(int actorId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int getFilmId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setFilmId(int filmId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Timestamp getLastUpdate()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setLastUpdate(Timestamp lastUpdate)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "boolean equals(Object o)",
+            "loc": 8,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int hashCode()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "Inventory",
+        "methods": [
+          {
+            "signature": "int getInventoryId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setInventoryId(int inventoryId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int getFilmId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setFilmId(int filmId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Timestamp getLastUpdate()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setLastUpdate(Timestamp lastUpdate)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "boolean equals(Object o)",
+            "loc": 7,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int hashCode()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "Staff",
+        "methods": [
+          {
+            "signature": "int getStaffId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setStaffId(int staffId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getFirstName()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setFirstName(String firstName)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getLastName()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setLastName(String lastName)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "byte getPicture()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setPicture(byte[] picture)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getEmail()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setEmail(String email)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "byte getActive()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setActive(byte active)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getUsername()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setUsername(String username)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getPassword()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setPassword(String password)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Timestamp getLastUpdate()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setLastUpdate(Timestamp lastUpdate)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "boolean equals(Object o)",
+            "loc": 14,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int hashCode()",
+            "loc": 5,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "Actor",
+        "methods": [
+          {
+            "signature": "int getActorId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setActorId(int actorId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getFirstName()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setFirstName(String firstName)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getLastName()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setLastName(String lastName)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Timestamp getLastUpdate()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setLastUpdate(Timestamp lastUpdate)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "boolean equals(Object o)",
+            "loc": 9,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int hashCode()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "FilmCategory",
+        "methods": [
+          {
+            "signature": "int getFilmId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setFilmId(Integer filmId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int getCategoryId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setCategoryId(Integer categoryId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Timestamp getLastUpdate()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setLastUpdate(Timestamp lastUpdate)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "boolean equals(Object o)",
+            "loc": 8,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int hashCode()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "Rental",
+        "methods": [
+          {
+            "signature": "int getRentalId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setRentalId(int rentalId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Timestamp getRentalDate()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setRentalDate(Timestamp rentalDate)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int getInventoryId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setInventoryId(int inventoryId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int getCustomerId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setCustomerId(int customerId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Timestamp getReturnDate()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setReturnDate(Timestamp returnDate)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int getStaffId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setStaffId(int staffId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Timestamp getLastUpdate()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setLastUpdate(Timestamp lastUpdate)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "boolean equals(Object o)",
+            "loc": 12,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int hashCode()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      },
+      {
+        "class": "Film",
+        "methods": [
+          {
+            "signature": "int getFilmId()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setFilmId(int filmId)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getTitle()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setTitle(String title)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getDescription()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setDescription(String description)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int getReleaseYear()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setReleaseYear(int releaseYear)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Integer getRentalDuration()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setRentalDuration(Integer rentalDuration)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "BigDecimal getRentalRate()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setRentalRate(BigDecimal rentalRate)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Integer getLength()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setLength(Integer length)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "BigDecimal getReplacementCost()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setReplacementCost(BigDecimal replacementCost)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getRating()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setRating(String rating)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "String getSpecialFeatures()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setSpecialFeatures(String specialFeatures)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "Timestamp getLastUpdate()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "void setLastUpdate(Timestamp lastUpdate)",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "boolean equals(Object o)",
+            "loc": 16,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          },
+          {
+            "signature": "int hashCode()",
+            "loc": 3,
+            "cyclomatic_complexity": null,
+            "summary": "",
+            "risks": null,
+            "side_effects": null,
+            "external_calls": null
+          }
+        ]
+      }
+    ]
+  }
+}
