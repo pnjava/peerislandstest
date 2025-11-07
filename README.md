@@ -136,8 +136,7 @@ Tune concurrency with `--workers` (reduce if rate limited).
 | `prompts.py` | Prompts for map/reduce steps |
 | `requirements.txt` | Project dependencies |
 | `output/sakila.json` | Structured project summary (example path) |
-| `.llm_cache.json` | Reusable local cache for map results |
-
+ 
 
 
 ## License
