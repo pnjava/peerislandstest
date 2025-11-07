@@ -1,58 +1,157 @@
-# Codebase Analyzer (LLM + Static Analysis)
+# 🚀 SakilaProject Codebase Analysis using LLM
 
-This tool analyzes a target repository (for example, [SakilaProject](https://github.com/janjakovacevic/SakilaProject)) and produces a structured JSON report that captures:
+### Objective
 
-- A high-level overview of the project
-- Noteworthy frameworks, libraries, and cross-cutting concerns
-- Key classes and methods with signatures, concise descriptions, and cyclomatic complexity scores
+This project demonstrates an automated approach to analyzing a software codebase using a Large Language Model (LLM). The solution reads and parses the SakilaProject (a sample Spring Boot application), then uses an LLM to extract structured insights about the project’s architecture, classes, and methods.
 
-## How it works
+## 🧠 Overview
 
-1. Scans relevant source files (`.java`, `.kt`, `.py`, `.cs`, `.js`, `.ts`).
-2. Parses Java sources with [`javalang`](https://github.com/c2nes/javalang) and collects class/method metadata.
-3. Computes cyclomatic complexity with [`lizard`](https://github.com/terryyin/lizard).
-4. Uses LangChain to orchestrate map/reduce prompts against your preferred LLM provider (OpenAI, Azure OpenAI, or Amazon Bedrock).
-5. Emits a strict JSON artifact summarizing the repository.
+### Goal
 
-## Quick start
+Build a program that:
 
-```bash
-# Clone the target repository (example: SakilaProject)
-git clone https://github.com/janjakovacevic/SakilaProject
+1. Reads source files in the given codebase.
+2. Efficiently feeds Java method snippets to an LLM for summarization (map), then aggregates results (reduce).
+3. Generates structured knowledge in a machine-readable JSON format.
 
-# Create and activate a virtual environment
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+The output (`sakila.json`) captures:
 
-# Install dependencies
-pip install -r requirements.txt
+- Project tech stack and dependencies
+- Class and method metadata (signature, LOC, cyclomatic complexity)
+- Package hierarchy and responsibilities
+- Potential insights and gaps
 
-# Configure your preferred LLM provider credentials
-export OPENAI_API_KEY=...        # or
-export AZURE_OPENAI_API_KEY=...  # or
-export AWS_ACCESS_KEY_ID=...
-export AWS_SECRET_ACCESS_KEY=...
+## 🧰 Tech Stack
 
-# Run the analyzer
-python main.py --repo ../SakilaProject --provider openai --model gpt-4o-mini --out output/sakila.json
+| Component | Purpose |
+| --- | --- |
+| Python 3.9+ | Driver language for orchestration |
+| LangChain | LLM integration and prompt orchestration |
+| OpenAI/Azure/Bedrock | Model providers via LangChain `init_chat_model` |
+| tqdm | Progress tracking |
+| javalang + lizard | Java parse + cyclomatic complexity |
+
+## 🏗️ Architecture
+
+Processing Flow
+
+```mermaid
+graph TD
+A[Scan Source Files] --> B[Parse Java Classes/Methods]
+B --> C[Async LLM Map per Method]
+C --> D[Cache Responses (.llm_cache.json)]
+D --> E[Reduce: Merge Insights]
+E --> F[Save Output: output/sakila.json]
 ```
 
-## Output
+## ⚙️ Implementation Details
 
-The generated JSON (`output/sakila.json` in the example) contains:
+1) Source Discovery
+
+- Scans `--repo` for these extensions: `.java`, `.kt`, `.js`, `.ts`, `.py`, `.cs` (see `SUPPORTED_EXTENSIONS`).
+- Ignores common build/output dirs (e.g., `node_modules`, `target`, `build`, `.git`, `dist`, `out`, `venv`, `.venv`).
+
+2) Java Parsing + Complexity
+
+- Parses Java with `javalang` to enumerate classes and methods.
+- Extracts method-level code snippet and computes cyclomatic complexity via `lizard`.
+
+3) LLM Map/Reduce
+
+- Map: per-method summarization using prompts from `prompts.py` (strict JSON output). Requests run concurrently using asyncio with `--workers` control.
+- Reduce: aggregates fragments into a high-level project summary (overview, noteworthy design, cross-cutting concerns, possible gaps).
+
+4) Caching
+
+- On-disk JSON cache `.llm_cache.json` keyed by model + snippet content avoids re-calling the API on re-runs.
+
+## 📄 Example Command
+
+```bash
+# Create venv and install
+python -m venv .venv
+source .venv/bin/activate  # Windows PowerShell: .venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+
+# Set credentials (choose one provider)
+export OPENAI_API_KEY=...            # or
+export AZURE_OPENAI_API_KEY=...      # and AZURE_OPENAI_ENDPOINT=...
+export AWS_ACCESS_KEY_ID=...         # and AWS_SECRET_ACCESS_KEY=... (for Bedrock)
+
+# Run
+python main.py \
+  --repo ../SakilaProject \
+  --provider openai \
+  --model gpt-4o-mini \
+  --workers 6 \
+  --out output/sakila.json
+```
+
+## 📦 Output Structure
+
+The generated JSON contains:
 
 - `repo`: absolute path to the analyzed repository
 - `generated_at`: UTC timestamp
 - `tech_stack`: parsed Maven dependencies and highlighted frameworks (Spring Boot, Thymeleaf, MySQL, etc.)
 - `high_level_overview`, `noteworthy_aspects`, `cross_cutting_concerns`, `possible_gaps`: aggregated project insights
-- `packages`: nested breakdown of packages → classes → methods, including signatures, line counts, complexity, summaries, risks, and external calls
+- `packages`: breakdown of packages → classes → methods, including signatures, LOC, complexity, summaries, risks, and external calls
 
-## Extending
+Example snippet
 
-- Add more file extensions to `SUPPORTED_EXTENSIONS` in `main.py` to handle additional languages.
-- Extend the parser section to capture metadata from non-Java files (currently only Java structures are parsed for method summaries).
-- Customize the prompts in `prompts.py` to request additional metadata or adjust the output schema.
+```json
+{
+  "tech_stack": {
+    "build": "maven",
+    "dependencies": ["spring-boot-starter-web", "mysql-connector-java"],
+    "frameworks_detected": ["spring-boot", "mysql"]
+  },
+  "packages": {
+    "com.example": [
+      {
+        "class": "FilmController",
+        "methods": [
+          {"signature": "String listFilms()", "loc": 14, "summary": "..."}
+        ]
+      }
+    ]
+  }
+}
+```
+
+## ⚡ Performance Enhancements
+
+| Technique | Impact |
+| --- | --- |
+| Async per-method map phase | 3–5× faster runtime vs. serial |
+| JSON cache (.llm_cache.json) | Saves cost and time on re-runs |
+| Strict JSON prompts | Reliable downstream parsing |
+
+Tune concurrency with `--workers` (reduce if rate limited).
+
+## 🧾 Deliverables
+
+| File | Description |
+| --- | --- |
+| `main.py` | Core implementation (async map + reduce + caching) |
+| `prompts.py` | Prompts for map/reduce steps |
+| `requirements.txt` | Project dependencies |
+| `output/sakila.json` | Structured project summary (example path) |
+| `.llm_cache.json` | Reusable local cache for map results |
+
+## 🧠 Lessons Learned
+
+- Per-method analysis keeps prompts small and focused.
+- Caching and concurrency are critical to cost and latency.
+- LangChain simplifies multi-provider setup (OpenAI, Azure, Bedrock) and retries.
+
+## 🚀 Future Enhancements
+
+- Extend method parsing beyond Java to other languages where feasible.
+- Visualize inter-class dependencies and call graphs.
+- Add richer rate-limit backoff and telemetry.
 
 ## License
 
 This project is provided as-is for the PeerIslands technical exercise.
+

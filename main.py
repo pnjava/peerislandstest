@@ -1,5 +1,7 @@
 import argparse
 import json
+import asyncio
+import hashlib
 import os
 import pathlib
 import re
@@ -205,7 +207,50 @@ def call_reduce(model, fragments: List[Dict[str, Any]]) -> Dict[str, Any]:
         raise ValueError("LLM returned invalid JSON for reduce step")
 
 
-def analyze_repo(repo_path: str, provider: str, model_name: str, out_path: str) -> None:
+# Async variant of map call for concurrency
+@retry(wait=wait_exponential(min=1, max=30), stop=stop_after_attempt(5))
+async def call_map_async(model, code_snippet: str) -> Dict[str, Any]:
+    messages = [SystemMessage(content=MAP_PROMPT), HumanMessage(content=code_snippet[:12000])]
+    response = await model.ainvoke(messages)
+    content = getattr(response, "content", "").strip()
+    try:
+        return json.loads(content)
+    except json.JSONDecodeError:
+        raise ValueError("LLM returned invalid JSON for map step")
+
+
+def _load_cache(cache_path: Optional[str]) -> Dict[str, Any]:
+    if not cache_path:
+        return {}
+    try:
+        if os.path.exists(cache_path):
+            with open(cache_path, "r", encoding="utf-8") as fh:
+                return json.load(fh)
+    except Exception:
+        return {}
+    return {}
+
+
+def _save_cache(cache_path: Optional[str], cache: Dict[str, Any]) -> None:
+    if not cache_path:
+        return
+    try:
+        out_dir = os.path.dirname(cache_path)
+        if out_dir:
+            os.makedirs(out_dir, exist_ok=True)
+        with open(cache_path, "w", encoding="utf-8") as fh:
+            json.dump(cache, fh, indent=2, ensure_ascii=False)
+    except Exception:
+        pass
+
+
+def _cache_key(model_name: str, code_snippet: str) -> str:
+    # Tie cache to model and snippet content
+    payload = f"{model_name}\n{code_snippet}"
+    return hashlib.sha1(payload.encode("utf-8", errors="ignore")).hexdigest()
+
+
+def analyze_repo(repo_path: str, provider: str, model_name: str, out_path: str, workers: int = 6, cache_path: Optional[str] = ".llm_cache.json") -> None:
     files = list_source_files(repo_path)
     java_files = [file for file in files if file.endswith(".java")]
 
@@ -221,11 +266,29 @@ def analyze_repo(repo_path: str, provider: str, model_name: str, out_path: str) 
 
     model = init_model(provider, model_name)
 
-    for class_info in tqdm(classes, desc="LLM map (per method)"):
-        for method in class_info.methods:
+    # Flatten methods for easier parallelism
+    methods: List[MethodInfo] = []
+    for class_info in classes:
+        methods.extend(class_info.methods)
+
+    cache = _load_cache(cache_path)
+
+    async def _run_map() -> None:
+        sem = asyncio.Semaphore(max(1, int(workers)))
+        pbar = tqdm(total=len(methods), desc="LLM map (per method)")
+
+        async def _do_one(method: MethodInfo) -> None:
+            key = _cache_key(model_name, method.code_snippet)
+            cached = cache.get(key)
+            if cached is not None:
+                method.llm_summary = cached
+                pbar.update(1)
+                return
             try:
-                method.llm_summary = call_map(model, method.code_snippet)
-                time.sleep(0.05)
+                async with sem:
+                    result = await call_map_async(model, method.code_snippet)
+                method.llm_summary = result
+                cache[key] = result
             except Exception:
                 method.llm_summary = {
                     "summary": "",
@@ -233,6 +296,19 @@ def analyze_repo(repo_path: str, provider: str, model_name: str, out_path: str) 
                     "side_effects": None,
                     "external_calls": None,
                 }
+            finally:
+                pbar.update(1)
+
+        # Schedule tasks and await completion
+        tasks = [asyncio.create_task(_do_one(m)) for m in methods]
+        for t in asyncio.as_completed(tasks):
+            await t
+        pbar.close()
+
+    # Run async map phase
+    if methods:
+        asyncio.run(_run_map())
+        _save_cache(cache_path, cache)
 
     fragments: List[Dict[str, Any]] = []
     for class_info in classes:
@@ -305,9 +381,12 @@ def main() -> None:
     parser.add_argument("--provider", choices=["openai", "azure", "bedrock"], default="openai")
     parser.add_argument("--model", dest="model_name", default="gpt-4o-mini", help="LLM model identifier")
     parser.add_argument("--out", default="output/report.json", help="Destination JSON path")
+    parser.add_argument("--workers", type=int, default=6, help="Concurrent LLM calls during map phase")
+    parser.add_argument("--cache", default=".llm_cache.json", help="Path to JSON cache (set empty to disable)")
     args = parser.parse_args()
 
-    analyze_repo(args.repo, args.provider, args.model_name, args.out)
+    cache_path = args.cache if (args.cache and args.cache.strip()) else None
+    analyze_repo(args.repo, args.provider, args.model_name, args.out, workers=args.workers, cache_path=cache_path)
 
 
 if __name__ == "__main__":
