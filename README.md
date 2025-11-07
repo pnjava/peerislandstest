@@ -27,7 +27,7 @@ The output (`sakila.json`) captures:
 | --- | --- |
 | Python 3.9+ | Driver language for orchestration |
 | LangChain | LLM integration and prompt orchestration |
-| OpenAI/Azure/Bedrock | Model providers via LangChain `init_chat_model` |
+| OpenAI  | Model providers via LangChain `init_chat_model` |
 | tqdm | Progress tracking |
 | javalang + lizard | Java parse + cyclomatic complexity |
 
@@ -73,14 +73,13 @@ python -m venv .venv
 source .venv/bin/activate  # Windows PowerShell: .venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 
-# Set credentials (choose one provider)
+# Set credentials 
 export OPENAI_API_KEY=...            # or
-export AZURE_OPENAI_API_KEY=...      # and AZURE_OPENAI_ENDPOINT=...
-
+ 
 # Run
 python main.py \
   --repo ../SakilaProject \
-  --provider openai \
+  -- openai \
   --model gpt-4o-mini \
   --workers 6 \
   --out output/sakila.json
