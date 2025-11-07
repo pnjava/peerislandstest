@@ -1,10 +1,10 @@
-# 🚀 SakilaProject Codebase Analysis using LLM
+#  SakilaProject Codebase Analysis using LLM
 
 ### Objective
 
 This project demonstrates an automated approach to analyzing a software codebase using a Large Language Model (LLM). The solution reads and parses the SakilaProject (a sample Spring Boot application), then uses an LLM to extract structured insights about the project’s architecture, classes, and methods.
 
-## 🧠 Overview
+##  Overview
 
 ### Goal
 
@@ -21,7 +21,7 @@ The output (`sakila.json`) captures:
 - Package hierarchy and responsibilities
 - Potential insights and gaps
 
-## 🧰 Tech Stack
+##   Tech Stack
 
 | Component | Purpose |
 | --- | --- |
@@ -31,20 +31,20 @@ The output (`sakila.json`) captures:
 | tqdm | Progress tracking |
 | javalang + lizard | Java parse + cyclomatic complexity |
 
-## 🏗️ Architecture
+##  Architecture
 
 Processing Flow
 
 ```mermaid
 graph TD
-A[Scan Source Files] --> B[Parse Java Classes/Methods]
-B --> C[Async LLM Map per Method]
-C --> D[Cache Responses (.llm_cache.json)]
-D --> E[Reduce: Merge Insights]
-E --> F[Save Output: output/sakila.json]
+A["Scan Source Files"] --> B["Parse Java Classes/Methods"]
+B --> C["Async LLM Map per Method"]
+C --> D["Cache Responses (.llm_cache.json)"]
+D --> E["Reduce: Merge Insights"]
+E --> F["Save Output: output/sakila.json"]
 ```
 
-## ⚙️ Implementation Details
+##  Implementation Details
 
 1) Source Discovery
 
@@ -65,7 +65,7 @@ E --> F[Save Output: output/sakila.json]
 
 - On-disk JSON cache `.llm_cache.json` keyed by model + snippet content avoids re-calling the API on re-runs.
 
-## 📄 Example Command
+##  Example Command
 
 ```bash
 # Create venv and install
@@ -76,7 +76,6 @@ python -m pip install -r requirements.txt
 # Set credentials (choose one provider)
 export OPENAI_API_KEY=...            # or
 export AZURE_OPENAI_API_KEY=...      # and AZURE_OPENAI_ENDPOINT=...
-export AWS_ACCESS_KEY_ID=...         # and AWS_SECRET_ACCESS_KEY=... (for Bedrock)
 
 # Run
 python main.py \
@@ -87,7 +86,7 @@ python main.py \
   --out output/sakila.json
 ```
 
-## 📦 Output Structure
+##  Output Structure
 
 The generated JSON contains:
 
@@ -119,7 +118,7 @@ Example snippet
 }
 ```
 
-## ⚡ Performance Enhancements
+##  Performance Enhancements
 
 | Technique | Impact |
 | --- | --- |
@@ -139,19 +138,8 @@ Tune concurrency with `--workers` (reduce if rate limited).
 | `output/sakila.json` | Structured project summary (example path) |
 | `.llm_cache.json` | Reusable local cache for map results |
 
-## 🧠 Lessons Learned
 
-- Per-method analysis keeps prompts small and focused.
-- Caching and concurrency are critical to cost and latency.
-- LangChain simplifies multi-provider setup (OpenAI, Azure, Bedrock) and retries.
-
-## 🚀 Future Enhancements
-
-- Extend method parsing beyond Java to other languages where feasible.
-- Visualize inter-class dependencies and call graphs.
-- Add richer rate-limit backoff and telemetry.
 
 ## License
 
 This project is provided as-is for the PeerIslands technical exercise.
-
