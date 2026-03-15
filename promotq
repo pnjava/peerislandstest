@@ -1,0 +1,379 @@
+Below is a structured “master prompt” you can use to instruct an AI system to design or implement the Repository Code Intelligence Indexing Engine you described.
+It is written so an LLM can understand the architecture, constraints, and reasoning rules for your PR-review system.
+
+You can paste this into your AI tool as the system prompt / design prompt.
+
+⸻
+
+MASTER PROMPT — AI CODE INTELLIGENCE INDEXING ENGINE
+
+You are designing a Repository Code Intelligence Engine for an automated peer-review system used in enterprise fintech repositories (Java, Groovy, Python, C++, TypeScript, etc.).
+
+The goal of the system is to pre-index the entire codebase with semantic understanding and dependency relationships so that pull-request reviews can be performed using delta analysis instead of full repository analysis.
+
+This engine must detect hidden dependencies, contextual dependencies, implicit framework behaviors, and cross-cutting concerns so that automated reviewers avoid false alarms and understand how code actually behaves in production systems.
+
+⸻
+
+System Objective
+
+Design a persistent semantic indexing layer for repositories that runs on a scheduled batch process (nightly or hourly) and builds a deep understanding of the codebase structure, dependencies, framework annotations, and historical behavior.
+
+This index must allow PR review engines to:
+	1.	Detect new vulnerabilities or logic risks introduced by code changes
+	2.	Avoid flagging issues already handled by existing dependencies or framework behavior
+	3.	Identify when a dependency relationship itself has changed
+	4.	Perform instant code review by analyzing only the changed code delta
+
+⸻
+
+Current System Capabilities (Existing Components)
+
+The system currently includes three partial components:
+
+1. Behavioral Pattern Engine
+
+Stores historical signals from pull requests including:
+	•	reviewer comments
+	•	blocker patterns
+	•	approval signals
+	•	review outcomes
+
+AI derives behavioral review patterns from these signals and stores them in SQLite.
+
+Limitation:
+
+This engine stores only review metadata, not actual code structure or semantics.
+
+⸻
+
+2. BP Batch Runner
+
+Runs on a scheduled interval and:
+	•	fetches merged PR signals from Bitbucket
+	•	processes review signals
+	•	derives patterns using AI
+	•	stores patterns in SQLite
+
+Limitation:
+
+This system still processes only metadata signals, not code relationships.
+
+⸻
+
+3. Repository Analyzer
+
+This component analyzes repository code during PR review and:
+	•	scans relevant files
+	•	extracts symbols
+	•	builds context
+	•	performs triage
+	•	prepares patches
+	•	runs multiple AI review calls
+
+Limitation:
+
+Every PR review rebuilds the entire analysis from scratch, which is inefficient.
+
+There is no persistent semantic index of the repository.
+
+⸻
+
+Missing Component (New System to Design)
+
+Design a Repository Code Intelligence Layer that creates a persistent semantic graph of the entire repository.
+
+This index must allow the PR reviewer to run delta analysis instead of full analysis.
+
+⸻
+
+Core Concept
+
+The repository indexing system must build a semantic dependency graph including:
+	•	code structure
+	•	method relationships
+	•	framework annotations
+	•	dependency injection
+	•	configuration-driven behavior
+	•	database relationships
+	•	service communication patterns
+
+This graph becomes the source of truth for code understanding.
+
+⸻
+
+Key Dependency Types to Detect
+
+The engine must detect and index the following dependency categories.
+
+Hidden Dependencies
+
+Dependencies not visible in local code but influencing behavior.
+
+Examples:
+	•	annotations
+	•	dependency injection
+	•	AOP interceptors
+	•	configuration files
+	•	framework wiring
+
+⸻
+
+Context Dependencies
+
+Code correctness depends on behavior defined elsewhere.
+
+Examples:
+	•	validation performed upstream
+	•	authorization middleware
+	•	transaction boundaries
+	•	sanitization layers
+
+⸻
+
+Implicit Dependencies
+
+Dependencies introduced by frameworks or runtime environments.
+
+Examples:
+	•	Spring dependency injection
+	•	Lombok generated methods
+	•	ORM mappings
+	•	framework lifecycle hooks
+
+⸻
+
+Cross-Cutting Concerns
+
+Behavior applied across the system through framework features.
+
+Examples:
+	•	authentication
+	•	logging
+	•	caching
+	•	transactions
+	•	monitoring
+	•	rate limiting
+
+⸻
+
+Repository Index Structure
+
+The indexing engine should create a multi-layer repository knowledge graph including:
+
+Code Structure Layer
+	•	repositories
+	•	modules
+	•	packages
+	•	files
+	•	classes
+	•	methods
+	•	variables
+
+⸻
+
+Symbol Relationship Layer
+
+Relationships between symbols including:
+	•	method calls
+	•	inheritance
+	•	interface implementation
+	•	dependency injection
+	•	annotation usage
+
+⸻
+
+Dependency Graph Layer
+
+Track dependencies such as:
+	•	database access
+	•	service calls
+	•	configuration references
+	•	environment variables
+	•	secrets
+	•	messaging queues
+	•	REST APIs
+
+⸻
+
+Framework Behavior Layer
+
+Detect framework constructs including:
+	•	annotations
+	•	interceptors
+	•	filters
+	•	middleware
+	•	aspect-oriented programming
+
+⸻
+
+Security Layer
+
+Track security-relevant patterns including:
+	•	authentication checks
+	•	authorization checks
+	•	encryption usage
+	•	input validation
+	•	database query construction
+
+⸻
+
+Historical Behavior Layer
+
+Merge with the behavioral pattern engine to track:
+	•	previous PR decisions
+	•	known vulnerabilities
+	•	accepted technical debt
+	•	historical reviewer decisions
+
+⸻
+
+Database Design
+
+The semantic index should be stored in a database optimized for graph queries.
+
+Preferred options:
+	•	graph database (Neo4j)
+	•	document store
+	•	relational DB with graph structure
+	•	vector index for semantic search
+
+Key indexed entities:
+	•	symbol
+	•	file
+	•	method
+	•	class
+	•	dependency
+	•	annotation
+	•	vulnerability pattern
+	•	historical review signal
+
+⸻
+
+Nightly Indexing Pipeline
+
+The indexing engine must run nightly or on schedule.
+
+Steps:
+	1.	Pull latest repository versions
+	2.	Parse all repositories
+	3.	Build AST (Abstract Syntax Trees)
+	4.	Extract symbols
+	5.	map dependency relationships
+	6.	detect annotations
+	7.	identify framework behaviors
+	8.	detect security patterns
+	9.	update dependency graph
+	10.	store semantic index
+
+⸻
+
+PR Review Workflow
+
+When a pull request arrives:
+	1.	Detect changed files
+	2.	retrieve indexed dependency graph
+	3.	perform delta analysis
+	4.	analyze only impacted dependency nodes
+	5.	compare against indexed baseline
+	6.	detect new vulnerabilities or logic issues
+
+⸻
+
+Critical Review Logic
+
+When reviewing PR changes, the engine must follow these rules:
+
+Rule 1
+
+If a detected issue is already handled through a known dependency or framework mechanism, do not flag it.
+
+Example:
+
+If validation is handled by an annotation or middleware already indexed.
+
+⸻
+
+Rule 2
+
+If a dependency relationship itself changes, trigger a deeper analysis.
+
+Examples:
+	•	security annotation removed
+	•	database query modified
+	•	validation layer bypassed
+	•	transaction boundary changed
+
+⸻
+
+Rule 3
+
+Known vulnerabilities already existing in the legacy codebase should not block PRs unless the change introduces a new vulnerability.
+
+The system must enforce a “no new vulnerabilities” policy.
+
+⸻
+
+Rule 4
+
+Prior review decisions should influence current reviews.
+
+If reviewers historically approved a pattern, reduce its severity.
+
+⸻
+
+AI Analysis Requirements
+
+AI should be used only for:
+	•	semantic reasoning
+	•	vulnerability detection
+	•	pattern classification
+	•	complex code reasoning
+
+All structural analysis should be performed using deterministic parsers.
+
+⸻
+
+Performance Goal
+
+PR reviews must execute in seconds rather than minutes by leveraging the pre-indexed semantic repository graph.
+
+⸻
+
+Inspiration From Industry Tools
+
+This system operates conceptually similar to:
+	•	GitHub CodeQL
+	•	Sourcegraph
+	•	JetBrains Code Intelligence
+	•	Semgrep
+	•	Google Kythe
+
+However it extends these tools by integrating:
+	•	AI reasoning
+	•	historical PR behavior
+	•	contextual dependency understanding
+
+⸻
+
+Expected Output of This Design
+
+The AI should produce:
+	1.	system architecture
+	2.	indexing pipeline design
+	3.	database schema
+	4.	dependency graph model
+	5.	PR delta analysis algorithm
+	6.	vulnerability detection logic
+	7.	scalability considerations
+	8.	integration with Bitbucket and CI/CD
+
+⸻
+
+Core Design Principle
+
+The system must behave like a persistent semantic brain of the repository so that PR reviewers operate on knowledge rather than re-analysis.
+
+⸻
+
+If you want, I can also help you design the actual architecture diagram for this system (UML / graph architecture) — it will look like something used by Google Code Intelligence or GitHub internal review engines, and it will make your system much more powerful than typical static analyzers.
